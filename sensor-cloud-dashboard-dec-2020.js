@@ -27,8 +27,8 @@ var data = {
 function load_chart()
 {
   var ct0 = document.getElementById("chart0").getContext("2d");
-  var myNewChart = new Chart(ct0).Line(data);
+  var myNewChart = new Chart(ct0, {type: "line", data: data});
   
   var ct1 = document.getElementById("chart1").getContext("2d");
-  var myNewChart = new Chart(ct1).Line(data);
+  var myNewChart = new Chart(ct1, {type: "line", data: data});
 }
