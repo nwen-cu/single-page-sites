@@ -31,12 +31,14 @@ data0 = {
     {
       label: 'Temperature(°C)',
       data: [5, 10],
+      fill: false,
       borderColor: 'rgba(255,69,0,0.5)',
       backgroundColor: 'rgba(255,69,0,0.5)'
     },
     {
       label: 'Humidity(%RH)',
       data: [65, 50],
+      fill: false,
       borderColor: 'rgba(65,105,225,0.5)',
       backgroundColor: 'rgba(65,105,225,0.5)'
     }
@@ -49,12 +51,14 @@ data1 = {
     {
       label: 'Temperature(°C)',
       data: [5, 10],
+      fill: false,
       borderColor: 'rgba(255,69,0,0.5)',
       backgroundColor: 'rgba(255,69,0,0.5)'
     },
     {
       label: 'Humidity(%RH)',
       data: [65, 50],
+      fill: false,
       borderColor: 'rgba(65,105,225,0.5)',
       backgroundColor: 'rgba(65,105,225,0.5)'
     }
