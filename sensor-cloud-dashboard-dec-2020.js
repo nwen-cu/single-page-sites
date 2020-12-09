@@ -45,7 +45,6 @@ function active_timer()
 function init_data()
 {
   head_init = {
-    mode: 'no-cors',
     method: 'HEAD',
     headers: new Headers({'Content-Type': 'application/json'})
   }
