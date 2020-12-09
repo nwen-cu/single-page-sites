@@ -42,6 +42,7 @@ data0 = {
 data1 = [];
 
 chart_options0 = {
+  type: 'line',
   data: data0,
   options: {
     responsive: true,
@@ -74,6 +75,7 @@ chart_options0 = {
 };
 
 chart_options1 = {
+  type: 'line',
   data: data1,
   options: {
     responsive: true,
