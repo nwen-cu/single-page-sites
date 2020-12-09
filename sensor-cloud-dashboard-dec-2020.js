@@ -46,7 +46,7 @@ function init_data()
 {
   head_init = {
     mode: 'cors',
-    method: 'HEAD',
+    method: 'GET',
     headers: new Headers({'Content-Type': 'application/json'})
   }
   fetch(endpoint0, head_init)
