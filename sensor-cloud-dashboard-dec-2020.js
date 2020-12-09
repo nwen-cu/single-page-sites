@@ -51,12 +51,12 @@ function init_data()
   }
   fetch(endpoint0, head_init)
   .catch(error => console.error('Error:', error))  
-  .then(response => response.text());
-  //.then(data => console.log(data['record-id-latest']));
+  .then(response => response.json())
+  .then(data => console.log(data['record-id-latest']));
   fetch(endpoint1, head_init)
   .catch(error => console.error('Error:', error))  
-  .then(response => response.text());
-  //.then(data => console.log(data['record-id-latest']));
+  .then(response => response.json())
+  .then(data => console.log(data['record-id-latest']));
 }
 
 function fetch_new_data()
