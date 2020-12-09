@@ -49,10 +49,14 @@ function init_data()
     method: 'HEAD',
     headers: new Headers({'Content-Type': 'application/json'})
   }
-  fetch(endpoint0, head_init).then(function(response) {
+  fetch(endpoint0, head_init)
+  .catch(error => console.error('Error:', error))  
+  .then(function(response) {
     console.log(response);
   });
-  fetch(endpoint1, head_init).then(function(response) {
+  fetch(endpoint1, head_init)
+  .catch(error => console.error('Error:', error))  
+  .then(function(response) {
     console.log(response);
   });
 }
