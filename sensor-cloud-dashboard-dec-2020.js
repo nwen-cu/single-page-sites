@@ -167,15 +167,16 @@ function init_data()
   fetch(endpoint0, head_init)
   .catch(error => console.error('Error:', error))  
   .then(response => response.json())
-  .then(function(){
+  .then(function(data){
     data_index0 = parseInt(data['record-id-latest'], 16);
     data_ready0 = true;
   });
   fetch(endpoint1, head_init)
   .catch(error => console.error('Error:', error))  
-  .then(response => response.json()).then(function(){
-    data_index0 = parseInt(data['record-id-latest'], 16);
-    data_ready0 = true;
+  .then(response => response.json())
+  .then(function(data){
+    data_index1 = parseInt(data['record-id-latest'], 16);
+    data_ready1 = true;
   });
 }
 
