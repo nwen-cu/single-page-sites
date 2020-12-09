@@ -31,6 +31,7 @@ data0 = {
     {
       label: 'Temperature(°C)',
       data: [5, 10],
+      yAxisID: 'temp-axis-0',
       fill: false,
       borderColor: 'rgba(255,69,0,0.5)',
       backgroundColor: 'rgba(255,69,0,0.5)'
@@ -38,6 +39,7 @@ data0 = {
     {
       label: 'Humidity(%RH)',
       data: [65, 50],
+      yAxisID: 'humi-axis-0',
       fill: false,
       borderColor: 'rgba(65,105,225,0.5)',
       backgroundColor: 'rgba(65,105,225,0.5)'
@@ -51,6 +53,7 @@ data1 = {
     {
       label: 'Temperature(°C)',
       data: [5, 10],
+      yAxisID: 'temp-axis-1',
       fill: false,
       borderColor: 'rgba(255,69,0,0.5)',
       backgroundColor: 'rgba(255,69,0,0.5)'
@@ -58,6 +61,7 @@ data1 = {
     {
       label: 'Humidity(%RH)',
       data: [65, 50],
+      yAxisID: 'humi-axis-1',
       fill: false,
       borderColor: 'rgba(65,105,225,0.5)',
       backgroundColor: 'rgba(65,105,225,0.5)'
