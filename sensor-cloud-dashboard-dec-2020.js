@@ -1,30 +1,3 @@
-var data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
-  datasets: 
-  [
-    {
-      label: "My First dataset",
-      fillColor: "rgba(220,220,220,0.2)",
-      strokeColor: "rgba(220,220,220,1)",
-      pointColor: "rgba(220,220,220,1)",
-      pointStrokeColor: "#fff",
-      pointHighlightFill: "#fff",
-      pointHighlightStroke: "rgba(220,220,220,1)",
-      data: [65, 59, 80, 81, 56, 55, 40]
-    },
-    {
-      label: "My Second dataset",
-      fillColor: "rgba(151,187,205,0.2)",
-      strokeColor: "rgba(151,187,205,1)",
-      pointColor: "rgba(151,187,205,1)",
-      pointStrokeColor: "#fff",
-      pointHighlightFill: "#fff",
-      pointHighlightStroke: "rgba(151,187,205,1)",
-      data: [28, 48, 40, 19, 86, 27, 90]
-    }
-  ]
-};
-
 data0 = {
   labels: ['dp0', 'dp1'], 
   datasets: [
@@ -148,13 +121,14 @@ endpoint1 = "https://7ndf9o8tca.execute-api.us-east-2.amazonaws.com/dev/sensor-d
 
 function init()
 {
-  init_data()
-  init_chart()
+  init_data();
+  init_chart();
+  activate_timer();
 }
 
-function active_timer()
+function activate_timer()
 {
-
+  setInterval(fetch_new_data, 3000);
 }
 
 function init_data()
@@ -192,19 +166,69 @@ function fetch_new_data()
   {
     fetch(endpoint0 + '/' + data_index0.toString(16).padStart(8, 0), fetch_init)
     .catch(error => console.error('Error:', error))  
-    .then();
+    .then(function(response){
+      if(response.ok)
+      {
+        data_index0++;
+        response.json().then(add_data0);
+      }
+    });
   }
   if(data_ready1)
   {
-  
+    fetch(endpoint1 + '/' + data_index1.toString(16).padStart(8, 0), fetch_init)
+    .catch(error => console.error('Error:', error))  
+    .then(function(response){
+      if(response.ok)
+      {
+        data_index1++;
+        response.json().then(add_data1);
+      }
+    });
   }
 }
+          
+function add_data0(data)
+{
+  dt = new Date(data['timestamp']);
+  label = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
+  value = data['value'].replaceAll('\"', '').split('/');
+  data0.labels.push(label);
+  data0.datasets[0].data.push(value[0]);
+  data0.datasets[1].data.push(value[1]);
+  if(data0.labels.length > 30)
+  {
+    data0.labels.shift();
+    data0.datasets[0].data.shift();
+    data0.datasets[1].data.shift();
+  }
+  window.chart0.update();
+}
+
+function add_data1(data)
+{
+  dt = new Date(data['timestamp']);
+  label = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
+  value = data['value'].replaceAll('\"', '').split('/');
+  data1.labels.push(label);
+  data1.datasets[0].data.push(value[0]);
+  data1.datasets[1].data.push(value[1]);
+  if(data1.labels.length > 30)
+  {
+    data1.labels.shift();
+    data1.datasets[0].data.shift();
+    data1.datasets[1].data.shift();
+  }
+  window.chart1.update();
+}
+    
+    
 
 function init_chart()
 {
   var ct0 = document.getElementById("chart0").getContext("2d");
-  var sensor_chart0 = new Chart(ct0, chart_options0);
+  window.chart0 = new Chart(ct0, chart_options0);
   
   var ct1 = document.getElementById("chart1").getContext("2d");
-  var sensor_chart1 = new Chart(ct1, chart_options1);
+  window.chart1 = new Chart(ct1, chart_options1);
 }
