@@ -59,13 +59,21 @@ chart_options0 = {
           type: 'linear',
           display: true,
           position: 'left',
-          id: 'temp-axis-0'
+          id: 'temp-axis-0',
+          ticks: {
+            min: 0,
+            max: 100
+          }
         },
         {
           type: 'linear',
           display: true,
           position: 'right',
           id: 'humi-axis-0',
+          ticks: {
+            min: 0,
+            max: 100
+          },
           gridLines: {
             drawOnChartArea: false
           }
@@ -92,13 +100,21 @@ chart_options1 = {
           type: 'linear',
           display: true,
           position: 'left',
-          id: 'temp-axis-1'
+          id: 'temp-axis-1',
+          ticks: {
+            min: 0,
+            max: 100
+          }
         },
         {
           type: 'linear',
           display: true,
           position: 'right',
           id: 'humi-axis-1',
+          ticks: {
+            min: 0,
+            max: 100
+          },
           gridLines: {
             drawOnChartArea: false
           }
