@@ -26,20 +26,40 @@ var data = {
 };
 
 data0 = {
-  labels: [], 
+  labels: ['dp0', 'dp1'], 
   datasets: [
     {
       label: 'Temperature(°C)',
-      data: []
+      data: [5, 10],
+      borderColor: 'rgba(255,69,0,0.5)',
+      backgroundColor: 'rgba(255,69,0,0.5)'
     },
     {
       label: 'Humidity(%RH)',
-      data: []
+      data: [65, 50],
+      borderColor: 'rgba(65,105,225,0.5)',
+      backgroundColor: 'rgba(65,105,225,0.5)'
     }
   ]
 };
 
-data1 = [];
+data1 = {
+  labels: ['dp0', 'dp1'], 
+  datasets: [
+    {
+      label: 'Temperature(°C)',
+      data: [5, 10],
+      borderColor: 'rgba(255,69,0,0.5)',
+      backgroundColor: 'rgba(255,69,0,0.5)'
+    },
+    {
+      label: 'Humidity(%RH)',
+      data: [65, 50],
+      borderColor: 'rgba(65,105,225,0.5)',
+      backgroundColor: 'rgba(65,105,225,0.5)'
+    }
+  ]
+};
 
 chart_options0 = {
   type: 'line',
