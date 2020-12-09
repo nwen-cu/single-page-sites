@@ -52,12 +52,12 @@ function init_data()
   fetch(endpoint0, head_init)
   .catch(error => console.error('Error:', error))  
   .then(function(response) {
-    console.log(response);
+    console.log(response.headers.get('Record-Index'));
   });
   fetch(endpoint1, head_init)
   .catch(error => console.error('Error:', error))  
   .then(function(response) {
-    console.log(response);
+    console.log(response.headers.get('Record-Index'));
   });
 }
 
