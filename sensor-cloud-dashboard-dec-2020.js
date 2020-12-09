@@ -52,11 +52,13 @@ function init_data()
   fetch(endpoint0, head_init)
   .catch(error => console.error('Error:', error))  
   .then(response => response.json())
-  .then(data => console.log(data['record-id-latest']));
+  .then(data => data_index0 = parseInt(data['record-id-latest'], 16));
   fetch(endpoint1, head_init)
   .catch(error => console.error('Error:', error))  
   .then(response => response.json())
-  .then(data => console.log(data['record-id-latest']));
+  .then(data => data_index1 = parseInt(data['record-id-latest'], 16));
+  console.log(data_index0);
+  console.log(data_index1);
 }
 
 function fetch_new_data()
