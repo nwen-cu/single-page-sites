@@ -46,7 +46,6 @@ function init_data()
 {
   head_init = {
     method: 'HEAD',
-    body: JSON.stringify({'sensor-key': ''}),
     headers: new Headers({'Content-Type': 'application/json'})
   }
   fetch(endpoint0, head_init).then(function(response) {
