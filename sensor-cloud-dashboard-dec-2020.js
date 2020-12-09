@@ -3,7 +3,7 @@ data0 = {
   datasets: [
     {
       label: 'Temperature(°C)',
-      data: [5, 10],
+      data: [],
       yAxisID: 'temp-axis-0',
       fill: false,
       borderColor: 'rgba(255,69,0,0.5)',
@@ -11,7 +11,7 @@ data0 = {
     },
     {
       label: 'Humidity(%RH)',
-      data: [65, 50],
+      data: [],
       yAxisID: 'humi-axis-0',
       fill: false,
       borderColor: 'rgba(65,105,225,0.5)',
@@ -25,7 +25,7 @@ data1 = {
   datasets: [
     {
       label: 'Temperature(°C)',
-      data: [5, 10],
+      data: [],
       yAxisID: 'temp-axis-1',
       fill: false,
       borderColor: 'rgba(255,69,0,0.5)',
@@ -33,7 +33,7 @@ data1 = {
     },
     {
       label: 'Humidity(%RH)',
-      data: [65, 50],
+      data: [],
       yAxisID: 'humi-axis-1',
       fill: false,
       borderColor: 'rgba(65,105,225,0.5)',
