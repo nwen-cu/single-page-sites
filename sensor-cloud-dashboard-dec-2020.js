@@ -50,10 +50,10 @@ function init_data()
     headers: new Headers({'Content-Type': 'application/json'})
   }
   fetch(endpoint0, head_init).then(function(response) {
-    console.log(response.headers.get('Record-Index'));
+    console.log(response);
   });
   fetch(endpoint1, head_init).then(function(response) {
-    console.log(response.headers.get('Record-Index'));
+    console.log(response);
   });
 }
 
