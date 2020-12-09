@@ -102,6 +102,7 @@ chart_options1 = {
         }
       ]
     }
+  }
 };
 
 
@@ -171,8 +172,8 @@ function fetch_new_data()
 function init_chart()
 {
   var ct0 = document.getElementById("chart0").getContext("2d");
-  var myNewChart = new Chart(ct0, chart_options0);
+  var sensor_chart0 = new Chart(ct0, chart_options0);
   
   var ct1 = document.getElementById("chart1").getContext("2d");
-  var myNewChart = new Chart(ct1, chart_options1);
+  var sensor_chart1 = new Chart(ct1, chart_options1);
 }
