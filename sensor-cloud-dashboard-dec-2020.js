@@ -144,7 +144,7 @@ function init()
 
 function activate_timer()
 {
-  setInterval(fetch_new_data, 3000);
+  setInterval(fetch_new_data, 1500);
 }
 
 function init_data()
