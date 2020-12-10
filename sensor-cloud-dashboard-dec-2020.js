@@ -61,8 +61,8 @@ chart_options0 = {
           position: 'left',
           id: 'temp-axis-0',
           ticks: {
-            min: 0,
-            max: 100
+            min: 10,
+            max: 60
           }
         },
         {
@@ -102,8 +102,8 @@ chart_options1 = {
           position: 'left',
           id: 'temp-axis-1',
           ticks: {
-            min: 0,
-            max: 100
+            min: 10,
+            max: 60
           }
         },
         {
