@@ -1,5 +1,5 @@
 data0 = {
-  labels: ['dp0', 'dp1'], 
+  labels: [], 
   datasets: [
     {
       label: 'Temperature(°C)',
