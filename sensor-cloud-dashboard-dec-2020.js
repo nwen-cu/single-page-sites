@@ -164,6 +164,10 @@ function init_data()
   .then(response => response.json())
   .then(function(data){
     data_index0 = parseInt(data['record-id-latest'], 16);
+    if(demo_mode)
+    {
+      data_index0 = 172;
+    }
     data_ready0 = true;
   });
   fetch(endpoint1, head_init)
@@ -171,6 +175,10 @@ function init_data()
   .then(response => response.json())
   .then(function(data){
     data_index1 = parseInt(data['record-id-latest'], 16);
+    if(demo_mode)
+    {
+      data_index1 = 242;
+    }
     data_ready1 = true;
   });
 }
