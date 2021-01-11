@@ -223,7 +223,7 @@ function add_data0(data)
   {
     return;
   }
-  dt = new Date(data['timestamp']);
+  dt = new Date(data['timestamp'] * 1000);
   label = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
   value = data['value'].replaceAll('\"', '').split('/');
   data0.labels.push(label);
@@ -249,7 +249,7 @@ function add_data1(data)
   {
     return;
   }
-  dt = new Date(data['timestamp']);
+  dt = new Date(data['timestamp'] * 1000);
   label = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
   value = data['value'].replaceAll('\"', '').split('/');
   data1.labels.push(label);
