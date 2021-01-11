@@ -219,6 +219,10 @@ function fetch_new_data()
           
 function add_data0(data)
 {
+  if(data0.labels.length > 30 && demo_mode)
+  {
+    return;
+  }
   dt = new Date(data['timestamp']);
   label = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
   value = data['value'].replaceAll('\"', '').split('/');
@@ -241,6 +245,10 @@ function add_data0(data)
 
 function add_data1(data)
 {
+  if(data1.labels.length > 30 && demo_mode)
+  {
+    return;
+  }
   dt = new Date(data['timestamp']);
   label = dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds();
   value = data['value'].replaceAll('\"', '').split('/');
@@ -249,11 +257,6 @@ function add_data1(data)
   data1.datasets[1].data.push(value[1]);
   if(data1.labels.length > 30)
   {
-    if(demo_mode)
-    {
-      window.chart1.update();
-      return;
-    }
     data1.labels.shift();
     data1.datasets[0].data.shift();
     data1.datasets[1].data.shift();
