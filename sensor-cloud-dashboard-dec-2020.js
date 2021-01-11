@@ -124,7 +124,7 @@ chart_options1 = {
   }
 };
 
-
+demo_mode = true
 
 data_index0 = 0
 data_index1 = 0
@@ -137,6 +137,11 @@ endpoint1 = "https://7ndf9o8tca.execute-api.us-east-2.amazonaws.com/dev/sensor-d
 
 function init()
 {
+  if(demo_mode)
+  {
+    data_index0 = 172
+    data_index1 = 242
+  }
   init_data();
   init_chart();
   activate_timer();
@@ -214,6 +219,11 @@ function add_data0(data)
   data0.datasets[1].data.push(value[1]);
   if(data0.labels.length > 30)
   {
+    if(demo_mode)
+    {
+      window.chart0.update();
+      return;
+    }
     data0.labels.shift();
     data0.datasets[0].data.shift();
     data0.datasets[1].data.shift();
@@ -231,6 +241,11 @@ function add_data1(data)
   data1.datasets[1].data.push(value[1]);
   if(data1.labels.length > 30)
   {
+    if(demo_mode)
+    {
+      window.chart1.update();
+      return;
+    }
     data1.labels.shift();
     data1.datasets[0].data.shift();
     data1.datasets[1].data.shift();
